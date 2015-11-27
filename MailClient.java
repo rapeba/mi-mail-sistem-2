@@ -14,7 +14,7 @@ public class MailClient
     /**
      * Constructor for objects of class MailClient
      */
-    public MailClient(MailServer servidorX, String usuarioX)
+    public MailClient(MailServer server, String user)
     {
         // inicializa las variables
         this.server = server;
@@ -65,9 +65,9 @@ public class MailClient
      * basándose en la información de dichos parámetros 
      * y lo envíe al servidor asociado a ese cliente.
      */
-    public void sendMailItem(String to, String message)
+    public void sendMailItem(String to, String message, String subject)
     {
-        MailItem email = new MailItem(user, to, message);
+        MailItem email = new MailItem(user, to, message, subject);
 		server.post(email);
     }
     

@@ -13,16 +13,19 @@ public class MailItem
     private String to;
     //
     private String message;
+    //
+    private String subject;
 
     /**
      * Constructor for objects of class MailItem
      */
-    public MailItem(String desde, String hacia, String mensaje)
+    public MailItem(String from, String to, String message, String subject)
     {
         // initialise instance variables
         this.from = from;
         this.to = to;
-       this. message = message;
+        this. message = message;
+        this.subject = subject;
         
     }
 
@@ -51,6 +54,14 @@ public class MailItem
     }
     
     /**
+     * Método getter para subject
+     */
+    public String getsubject()
+    {
+        return subject;
+    }
+    
+    /**
      * Método print sin parámetros
      * que muestra los atributos
      * del objeto
@@ -60,6 +71,7 @@ public class MailItem
         System.out.println("desde " + from);
         System.out.println("hacia " + to);
         System.out.println("mensaje " + message);
+        System.out.println("asunto " + subject);
 
     }
 }
