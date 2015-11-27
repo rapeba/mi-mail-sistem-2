@@ -71,7 +71,22 @@ public class MailClient
 		server.post(email);
     }
     
+    /**
+     * Método que muestra cuantos emails hay
+     */
     
+    public void numeroEmails ()
     
+    {
+        System.out.print("Hay " +  server.howManyMailItems(user) + " emails");
+    }
     
+    /**
+     * Método 
+     */
+    public void getNextMailItemAndSendAutomaticRespond()
+    {
+        
+    }
 }
+

@@ -70,8 +70,9 @@ public class MailItem
     {
         System.out.println("desde " + from);
         System.out.println("hacia " + to);
-        System.out.println("mensaje " + message);
         System.out.println("asunto " + subject);
+        System.out.println("mensaje " + message);
+       
 
     }
 }
