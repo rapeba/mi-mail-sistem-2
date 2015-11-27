@@ -1,11 +1,14 @@
 #BlueJ class context
-comment0.params=server\ user
+comment0.params=servidorX\ usuarioX
 comment0.target=MailClient(MailServer,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MailClient\r\n
 comment1.params=
-comment1.target=void\ getNextMailItem()
+comment1.target=MailItem\ getNextMailItem()
 comment1.text=\r\n\ M\u00E9todo\ que\ recupera\ del\ servidor\ el\ siguiente\ correo\r\n\ (un\ objeto\ MailItem)\ que\ tenga\ el\ usuario\ y\ devuelva\ dicho\ objeto.\r\n
 comment2.params=
 comment2.target=void\ printNextMailItem()
 comment2.text=\r\n\ M\u00E9todo\ que\ recupere\ del\ servidor\ el\ siguiente\ correo\ (un\ objeto\ MailItem)\r\n\ que\ tenga\ el\ usuario\ e\ imprima\ por\ pantalla\ los\ datos\ de\ dicho\ mensaje.\r\n\ Si\ no\ hay\ ningun\ mensaje,\ que\ muestre\ un\ mensaje\ por\ pantalla\ informando\ de\ ello.\r\n
-numComments=3
+comment3.params=to\ message
+comment3.target=void\ sendMailItem(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ M\u00E9todo\ que\ reciba\ 2\ par\u00E1metros\ (un\ String\ indicando\ para\ qui\u00E9n\ es\ el\ mensaje\r\n\ y\ otro\ String\ indicando\ el\ contenido\ del\ mensaje),\ cree\ un\ email\ (objeto\ MailItem)\r\n\ bas\u00E1ndose\ en\ la\ informaci\u00F3n\ de\ dichos\ par\u00E1metros\ \r\n\ y\ lo\ env\u00EDe\ al\ servidor\ asociado\ a\ ese\ cliente.\r\n
+numComments=4

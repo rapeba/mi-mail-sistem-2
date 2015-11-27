@@ -20,9 +20,9 @@ public class MailItem
     public MailItem(String desde, String hacia, String mensaje)
     {
         // initialise instance variables
-        from = desde;
-        to = hacia;
-        message = mensaje;
+        this.from = from;
+        this.to = to;
+       this. message = message;
         
     }
 
