@@ -11,6 +11,9 @@ public class MailClient
     private MailServer server;
     private String user;
     private MailItem lastMail;
+    private int spam;
+    private int recibidos;
+    private int enviados;
 
     /**
      * Constructor for objects of class MailClient
@@ -20,6 +23,8 @@ public class MailClient
         // inicializa las variables
         this.server = server;
         this.user = user;
+        spam = 0;
+        recibidos = 0;
     }
 
     /**
@@ -48,12 +53,14 @@ public class MailClient
         {
             //Imprimimos los detalles del email
 		    System.out.println("Tienes un spam");
+		    spam++;
         }
         
         else if (email.getMessage().contains("trabajo"))
         {
             //Avisamos de que no hay emails en el servidor
 			System.out.println("Hay correo nuevo");
+			recibidos++;
         }
   
     }
@@ -70,6 +77,7 @@ public class MailClient
     {
         MailItem email = new MailItem(user, to, message, subject);
 		server.post(email);
+		enviados++;
     }
     
     /**
@@ -110,6 +118,10 @@ public class MailClient
         {
         System.out.println("No hay ningun mensaje.");
         }
+    }
+    
+    public void showStats()
+    {
     }
 }
 
