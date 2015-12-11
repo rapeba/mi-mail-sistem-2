@@ -10,6 +10,7 @@ public class MailClient
     // Atributos
     private MailServer server;
     private String user;
+    private MailItem lastMail;
 
     /**
      * Constructor for objects of class MailClient
@@ -43,16 +44,16 @@ public class MailClient
     public void printNextMailItem()
     {
         MailItem email = getNextMailItem();
-        if (email != null)
+        if (email.getMessage().contains("regalo")||email.getMessage().contains("promocion"))        
         {
             //Imprimimos los detalles del email
-			email.print();
+		    System.out.println("Tienes un spam");
         }
         
-        else
+        else if (email.getMessage().contains("trabajo"))
         {
             //Avisamos de que no hay emails en el servidor
-			System.out.println("No hay correo nuevo");
+			System.out.println("Hay correo nuevo");
         }
   
     }
@@ -65,9 +66,9 @@ public class MailClient
      * basándose en la información de dichos parámetros 
      * y lo envíe al servidor asociado a ese cliente.
      */
-    public void sendMailItem(String to, String message, String subject)
+    public void sendMailItem(String to, String message)
     {
-        MailItem email = new MailItem(user, to, message, subject);
+        MailItem email = new MailItem(to, message);
 		server.post(email);
     }
     
@@ -82,11 +83,33 @@ public class MailClient
     }
     
     /**
-     * Método 
+     * Método recibe un correo y responde indicando que estamos fuera
      */
     public void getNextMailItemAndSendAutomaticRespond()
     {
-        
+        MailItem email = getNextMailItem();
+        if (email != null)
+        {
+            sendMailItem(email.getFrom(),
+            "No estoy en la oficina. " + email.getMessage(),
+            "RE: " + email.getSubject());
+        }
+    }
+    
+    /**
+     * Muestra por pantalla los datos del ultimo email.
+     * En caso de no haber ninguno nos informa de ello
+     */
+    public void muestraUltimoEmail()
+    {
+        if (lastMail !=null) 
+        {
+        lastMail.print();
+        }
+        else
+        {
+        System.out.println("No hay ningun mensaje.");
+        }
     }
 }
 

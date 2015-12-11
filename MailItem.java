@@ -15,18 +15,18 @@ public class MailItem
     private String message;
     //
     private String subject;
+   
 
     /**
      * Constructor for objects of class MailItem
      */
-    public MailItem(String from, String to, String message, String subject)
+    public MailItem(String from, String to, String message, String subject, String spam1, String spam2)
     {
         // initialise instance variables
         this.from = from;
         this.to = to;
         this. message = message;
         this.subject = subject;
-        
     }
 
     /**
@@ -56,7 +56,7 @@ public class MailItem
     /**
      * Método getter para subject
      */
-    public String getsubject()
+    public String getSubject()
     {
         return subject;
     }
@@ -68,11 +68,12 @@ public class MailItem
      */
     public void print()
     {
-        System.out.println("desde " + from);
-        System.out.println("hacia " + to);
-        System.out.println("asunto " + subject);
-        System.out.println("mensaje " + message);
-       
-
+      
+            System.out.println("desde " + from);
+            System.out.println("hacia " + to);
+            System.out.println("asunto " + subject);
+            System.out.println("mensaje " + message);
     }
 }
+    
+
